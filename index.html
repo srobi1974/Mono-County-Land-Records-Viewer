@@ -1,0 +1,572 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+
+<title>Mono County Land Records Viewer</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Condensed:wght@500;700&display=swap">
+<style>.leaflet-image-layer,.leaflet-layer,.leaflet-marker-icon,.leaflet-marker-shadow,.leaflet-pane,.leaflet-pane>canvas,.leaflet-pane>svg,.leaflet-tile,.leaflet-tile-container,.leaflet-zoom-box{position:absolute;left:0;top:0}.leaflet-container{overflow:hidden}.leaflet-marker-icon,.leaflet-marker-shadow,.leaflet-tile{-webkit-user-select:none;-moz-user-select:none;user-select:none;-webkit-user-drag:none}.leaflet-tile::selection{background:0 0}.leaflet-safari .leaflet-tile{image-rendering:-webkit-optimize-contrast}.leaflet-safari .leaflet-tile-container{width:1600px;height:1600px;-webkit-transform-origin:0 0}.leaflet-marker-icon,.leaflet-marker-shadow{display:block}.leaflet-container .leaflet-overlay-pane svg{max-width:none!important;max-height:none!important}.leaflet-container .leaflet-marker-pane img,.leaflet-container .leaflet-shadow-pane img,.leaflet-container .leaflet-tile,.leaflet-container .leaflet-tile-pane img,.leaflet-container img.leaflet-image-layer{max-width:none!important;max-height:none!important;width:auto;padding:0}.leaflet-container img.leaflet-tile{mix-blend-mode:plus-lighter}.leaflet-container.leaflet-touch-zoom{-ms-touch-action:pan-x pan-y;touch-action:pan-x pan-y}.leaflet-container.leaflet-touch-drag{-ms-touch-action:pinch-zoom;touch-action:none;touch-action:pinch-zoom}.leaflet-container.leaflet-touch-drag.leaflet-touch-zoom{-ms-touch-action:none;touch-action:none}.leaflet-container{-webkit-tap-highlight-color:transparent}.leaflet-container a{-webkit-tap-highlight-color:rgba(51,181,229,.4)}.leaflet-tile{filter:inherit;visibility:hidden}.leaflet-tile-loaded{visibility:inherit}.leaflet-zoom-box{width:0;height:0;-moz-box-sizing:border-box;box-sizing:border-box;z-index:800}.leaflet-overlay-pane svg{-moz-user-select:none}.leaflet-pane{z-index:400}.leaflet-tile-pane{z-index:200}.leaflet-overlay-pane{z-index:400}.leaflet-shadow-pane{z-index:500}.leaflet-marker-pane{z-index:600}.leaflet-tooltip-pane{z-index:650}.leaflet-popup-pane{z-index:700}.leaflet-map-pane canvas{z-index:100}.leaflet-map-pane svg{z-index:200}.leaflet-vml-shape{width:1px;height:1px}.lvml{behavior:url(#default#VML);display:inline-block;position:absolute}.leaflet-control{position:relative;z-index:800;pointer-events:visiblePainted;pointer-events:auto}.leaflet-bottom,.leaflet-top{position:absolute;z-index:1000;pointer-events:none}.leaflet-top{top:0}.leaflet-right{right:0}.leaflet-bottom{bottom:0}.leaflet-left{left:0}.leaflet-control{float:left;clear:both}.leaflet-right .leaflet-control{float:right}.leaflet-top .leaflet-control{margin-top:10px}.leaflet-bottom .leaflet-control{margin-bottom:10px}.leaflet-left .leaflet-control{margin-left:10px}.leaflet-right .leaflet-control{margin-right:10px}.leaflet-fade-anim .leaflet-popup{opacity:0;-webkit-transition:opacity .2s linear;-moz-transition:opacity .2s linear;transition:opacity .2s linear}.leaflet-fade-anim .leaflet-map-pane .leaflet-popup{opacity:1}.leaflet-zoom-animated{-webkit-transform-origin:0 0;-ms-transform-origin:0 0;transform-origin:0 0}svg.leaflet-zoom-animated{will-change:transform}.leaflet-zoom-anim .leaflet-zoom-animated{-webkit-transition:-webkit-transform .25s cubic-bezier(0,0,.25,1);-moz-transition:-moz-transform .25s cubic-bezier(0,0,.25,1);transition:transform .25s cubic-bezier(0,0,.25,1)}.leaflet-pan-anim .leaflet-tile,.leaflet-zoom-anim .leaflet-tile{-webkit-transition:none;-moz-transition:none;transition:none}.leaflet-zoom-anim .leaflet-zoom-hide{visibility:hidden}.leaflet-interactive{cursor:pointer}.leaflet-grab{cursor:-webkit-grab;cursor:-moz-grab;cursor:grab}.leaflet-crosshair,.leaflet-crosshair .leaflet-interactive{cursor:crosshair}.leaflet-control,.leaflet-popup-pane{cursor:auto}.leaflet-dragging .leaflet-grab,.leaflet-dragging .leaflet-grab .leaflet-interactive,.leaflet-dragging .leaflet-marker-draggable{cursor:move;cursor:-webkit-grabbing;cursor:-moz-grabbing;cursor:grabbing}.leaflet-image-layer,.leaflet-marker-icon,.leaflet-marker-shadow,.leaflet-pane>svg path,.leaflet-tile-container{pointer-events:none}.leaflet-image-layer.leaflet-interactive,.leaflet-marker-icon.leaflet-interactive,.leaflet-pane>svg path.leaflet-interactive,svg.leaflet-image-layer.leaflet-interactive path{pointer-events:visiblePainted;pointer-events:auto}.leaflet-container{background:#ddd;outline-offset:1px}.leaflet-container a{color:#0078a8}.leaflet-zoom-box{border:2px dotted #38f;background:rgba(255,255,255,.5)}.leaflet-container{font-family:"Helvetica Neue",Arial,Helvetica,sans-serif;font-size:12px;font-size:.75rem;line-height:1.5}.leaflet-bar{box-shadow:0 1px 5px rgba(0,0,0,.65);border-radius:4px}.leaflet-bar a{background-color:#fff;border-bottom:1px solid #ccc;width:26px;height:26px;line-height:26px;display:block;text-align:center;text-decoration:none;color:#000}.leaflet-bar a,.leaflet-control-layers-toggle{background-position:50% 50%;background-repeat:no-repeat;display:block}.leaflet-bar a:focus,.leaflet-bar a:hover{background-color:#f4f4f4}.leaflet-bar a:first-child{border-top-left-radius:4px;border-top-right-radius:4px}.leaflet-bar a:last-child{border-bottom-left-radius:4px;border-bottom-right-radius:4px;border-bottom:none}.leaflet-bar a.leaflet-disabled{cursor:default;background-color:#f4f4f4;color:#bbb}.leaflet-touch .leaflet-bar a{width:30px;height:30px;line-height:30px}.leaflet-touch .leaflet-bar a:first-child{border-top-left-radius:2px;border-top-right-radius:2px}.leaflet-touch .leaflet-bar a:last-child{border-bottom-left-radius:2px;border-bottom-right-radius:2px}.leaflet-control-zoom-in,.leaflet-control-zoom-out{font:bold 18px 'Lucida Console',Monaco,monospace;text-indent:1px}.leaflet-touch .leaflet-control-zoom-in,.leaflet-touch .leaflet-control-zoom-out{font-size:22px}.leaflet-control-layers{box-shadow:0 1px 5px rgba(0,0,0,.4);background:#fff;border-radius:5px}.leaflet-control-layers-toggle{background-image:url(images/layers.png);width:36px;height:36px}.leaflet-retina .leaflet-control-layers-toggle{background-image:url(images/layers-2x.png);background-size:26px 26px}.leaflet-touch .leaflet-control-layers-toggle{width:44px;height:44px}.leaflet-control-layers .leaflet-control-layers-list,.leaflet-control-layers-expanded .leaflet-control-layers-toggle{display:none}.leaflet-control-layers-expanded .leaflet-control-layers-list{display:block;position:relative}.leaflet-control-layers-expanded{padding:6px 10px 6px 6px;color:#333;background:#fff}.leaflet-control-layers-scrollbar{overflow-y:scroll;overflow-x:hidden;padding-right:5px}.leaflet-control-layers-selector{margin-top:2px;position:relative;top:1px}.leaflet-control-layers label{display:block;font-size:13px;font-size:1.08333em}.leaflet-control-layers-separator{height:0;border-top:1px solid #ddd;margin:5px -10px 5px -6px}.leaflet-default-icon-path{background-image:url(images/marker-icon.png)}.leaflet-container .leaflet-control-attribution{background:#fff;background:rgba(255,255,255,.8);margin:0}.leaflet-control-attribution,.leaflet-control-scale-line{padding:0 5px;color:#333;line-height:1.4}.leaflet-control-attribution a{text-decoration:none}.leaflet-control-attribution a:focus,.leaflet-control-attribution a:hover{text-decoration:underline}.leaflet-attribution-flag{display:inline!important;vertical-align:baseline!important;width:1em;height:.6669em}.leaflet-left .leaflet-control-scale{margin-left:5px}.leaflet-bottom .leaflet-control-scale{margin-bottom:5px}.leaflet-control-scale-line{border:2px solid #777;border-top:none;line-height:1.1;padding:2px 5px 1px;white-space:nowrap;-moz-box-sizing:border-box;box-sizing:border-box;background:rgba(255,255,255,.8);text-shadow:1px 1px #fff}.leaflet-control-scale-line:not(:first-child){border-top:2px solid #777;border-bottom:none;margin-top:-2px}.leaflet-control-scale-line:not(:first-child):not(:last-child){border-bottom:2px solid #777}.leaflet-touch .leaflet-bar,.leaflet-touch .leaflet-control-attribution,.leaflet-touch .leaflet-control-layers{box-shadow:none}.leaflet-touch .leaflet-bar,.leaflet-touch .leaflet-control-layers{border:2px solid rgba(0,0,0,.2);background-clip:padding-box}.leaflet-popup{position:absolute;text-align:center;margin-bottom:20px}.leaflet-popup-content-wrapper{padding:1px;text-align:left;border-radius:12px}.leaflet-popup-content{margin:13px 24px 13px 20px;line-height:1.3;font-size:13px;font-size:1.08333em;min-height:1px}.leaflet-popup-content p{margin:17px 0;margin:1.3em 0}.leaflet-popup-tip-container{width:40px;height:20px;position:absolute;left:50%;margin-top:-1px;margin-left:-20px;overflow:hidden;pointer-events:none}.leaflet-popup-tip{width:17px;height:17px;padding:1px;margin:-10px auto 0;pointer-events:auto;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg)}.leaflet-popup-content-wrapper,.leaflet-popup-tip{background:#fff;color:#333;box-shadow:0 3px 14px rgba(0,0,0,.4)}.leaflet-container a.leaflet-popup-close-button{position:absolute;top:0;right:0;border:none;text-align:center;width:24px;height:24px;font:16px/24px Tahoma,Verdana,sans-serif;color:#757575;text-decoration:none;background:0 0}.leaflet-container a.leaflet-popup-close-button:focus,.leaflet-container a.leaflet-popup-close-button:hover{color:#585858}.leaflet-popup-scrolled{overflow:auto}.leaflet-oldie .leaflet-popup-content-wrapper{-ms-zoom:1}.leaflet-oldie .leaflet-popup-tip{width:24px;margin:0 auto}.leaflet-oldie .leaflet-control-layers,.leaflet-oldie .leaflet-control-zoom,.leaflet-oldie .leaflet-popup-content-wrapper,.leaflet-oldie .leaflet-popup-tip{border:1px solid #999}.leaflet-div-icon{background:#fff;border:1px solid #666}.leaflet-tooltip{position:absolute;padding:6px;background-color:#fff;border:1px solid #fff;border-radius:3px;color:#222;white-space:nowrap;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;pointer-events:none;box-shadow:0 1px 3px rgba(0,0,0,.4)}.leaflet-tooltip.leaflet-interactive{cursor:pointer;pointer-events:auto}.leaflet-tooltip-bottom:before,.leaflet-tooltip-left:before,.leaflet-tooltip-right:before,.leaflet-tooltip-top:before{position:absolute;pointer-events:none;border:6px solid transparent;background:0 0;content:""}.leaflet-tooltip-bottom{margin-top:6px}.leaflet-tooltip-top{margin-top:-6px}.leaflet-tooltip-bottom:before,.leaflet-tooltip-top:before{left:50%;margin-left:-6px}.leaflet-tooltip-top:before{bottom:0;margin-bottom:-12px;border-top-color:#fff}.leaflet-tooltip-bottom:before{top:0;margin-top:-12px;margin-left:-6px;border-bottom-color:#fff}.leaflet-tooltip-left{margin-left:-6px}.leaflet-tooltip-right{margin-left:6px}.leaflet-tooltip-left:before,.leaflet-tooltip-right:before{top:50%;margin-top:-6px}.leaflet-tooltip-left:before{right:0;margin-right:-12px;border-left-color:#fff}.leaflet-tooltip-right:before{left:0;margin-left:-12px;border-right-color:#fff}@media print{.leaflet-control{-webkit-print-color-adjust:exact;print-color-adjust:exact}}.dlist{max-height:260px;overflow:auto;font-size:13px;line-height:1.5}
+</style>
+<style>
+/* Layout: full-height map with a docked record index on the left (bottom sheet on phones). Ink-on-drafting-film palette. */
+:root{
+  --bg:#f4f4f4; --panel:#ffffff; --ink:#222222; --muted:#5a5f5e; --rule:#dddddd; --grid:#b8bebb; --road:#a3aaa7; --parcel:#7f8884;
+  --accent:#0a534b; --brand:#0a534b; --brand-ink:#ffffff; --sand:#ede7dd;
+  --mb:#c2571a; --pm:#1f5f8b; --rs:#7a3a96; --tm:#2a7a46; --ct:#b8860b; --cr:#c0262d; --fc:#2e7d32; --mm:#c71585; --sh:#8a5a1f; --ll:#b03a6e; --cc:#a3570c; --rv:#6b4c9a; --sr:#8a6d2a; --om:#1d6e8a; --hap:#7a6a55; --lm:#5a7d0a; --am:#4c5a9a; --gl:#2f6f73; --gc:#2a64a0; --cp:#00838f; --ad:#8c5aa0; --fn:#9a4f1e; --mi:#5b6e8c;
+  --display:"Roboto Condensed","Arial Narrow",Arial,sans-serif; --body:Roboto,Arial,sans-serif; --mono:"Roboto Condensed","Arial Narrow",Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#141917; --panel:#1b211f; --ink:#e3e8e4; --muted:#98a39d; --rule:#2f3834; --grid:#3a4440; --road:#56615b; --parcel:#6c7771;
+  --accent:#7fd1c6; --brand:#0a534b; --brand-ink:#ffffff; --sand:#2a2622; --mb:#f08a4b; --pm:#6fb0dd; --rs:#c08ad8; --tm:#6cc48a; --ct:#e0b84a; --cr:#ff6b6b; --fc:#7fd48a; --mm:#ff7ad9; --sh:#d6a565; --ll:#e88bb4; --cc:#f0a660; --rv:#b89ae0; --sr:#d9b96a; --om:#6cc0e0; --hap:#c2ae8f; --lm:#a9cf55; --am:#9eabe6; --gl:#7cc7c9; --gc:#8fb8e8; --cp:#5fd3dc; --ad:#c9a0dc; --fn:#e09a6a; --mi:#9fb3d6; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141917; --panel:#1b211f; --ink:#e3e8e4; --muted:#98a39d; --rule:#2f3834; --grid:#3a4440; --road:#56615b; --parcel:#6c7771;
+  --accent:#7fd1c6; --brand:#0a534b; --brand-ink:#ffffff; --sand:#2a2622; --mb:#f08a4b; --pm:#6fb0dd; --rs:#c08ad8; --tm:#6cc48a; --ct:#e0b84a; --cr:#ff6b6b; --fc:#7fd48a; --mm:#ff7ad9; --sh:#d6a565; --ll:#e88bb4; --cc:#f0a660; --rv:#b89ae0; --sr:#d9b96a; --om:#6cc0e0; --hap:#c2ae8f; --lm:#a9cf55; --am:#9eabe6; --gl:#7cc7c9; --gc:#8fb8e8; --cp:#5fd3dc; --ad:#c9a0dc; --fn:#e09a6a; --mi:#9fb3d6; color-scheme:dark}
+html,body{height:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:14px}
+.app{display:grid;grid-template-columns:340px 1fr;height:100%}
+aside{background:var(--panel);border-right:1px solid var(--rule);display:flex;flex-direction:column;min-width:0;min-height:0}
+.head{padding-block:18px 14px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:16px;background:var(--brand);color:var(--brand-ink);border-bottom:4px solid var(--sand)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.head .eyebrow{color:rgba(255,255,255,.75)}
+h1{font-family:var(--display);font-weight:700;font-size:26px;line-height:1.05;margin:4px 0 6px;text-wrap:balance;text-transform:uppercase;letter-spacing:.02em}
+.sub{color:rgba(255,255,255,.85);font-size:13px;line-height:1.4}
+.search{margin-top:12px;display:flex;gap:0;border-radius:4px;overflow:hidden;box-shadow:0 1px 3px rgb(0 0 0 / .25)}
+.search button{font:inherit;font-family:var(--display);font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:0 14px;border:0;background:var(--sand);color:var(--brand);cursor:pointer}
+.search button:hover{filter:brightness(.95)}
+.search input{flex:1;min-width:0;font:inherit;font-size:15px;padding:11px 12px;border:0;border-radius:0;background:var(--panel);color:var(--ink)}
+.search input::placeholder{color:#777}
+.search input:focus-visible,button:focus-visible,label:focus-within{outline:2px solid var(--accent);outline-offset:1px}
+.layersbox{border-bottom:1px solid var(--rule);flex:none;max-height:45%;overflow:auto}
+.layersbox summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;padding:9px 16px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700;background:var(--bg);position:sticky;top:0}
+.layersbox summary::-webkit-details-marker{display:none}
+.layersbox summary::before{content:"▸";margin-right:8px;transition:transform .15s}
+.layersbox[open] summary::before{transform:rotate(90deg)}
+.layersbox summary .n{font-weight:400}
+.layers{padding:6px max(16px,env(safe-area-inset-left,0px)) 10px;padding-right:16px;display:grid;gap:2px}
+.layer{display:grid;grid-template-columns:18px 14px 1fr auto auto auto;align-items:center;gap:8px;padding:5px 4px;border-radius:4px;cursor:pointer}
+.layer:hover{background:var(--bg)}
+.layer input{margin:0;accent-color:var(--accent)}
+.sw{width:14px;height:10px;border:2px solid currentColor;border-radius:2px;background:color-mix(in srgb,currentColor 22%,transparent)}
+.sw.pt{width:10px;height:10px;border-radius:50%;justify-self:center;background:currentColor}
+.sw.ln{height:0;border-width:1px 0 0;background:none}
+.layer .dl{display:inline-block;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.04em;padding:2px 5px;border:1px solid var(--rule);border-radius:3px;background:var(--panel);color:var(--accent);cursor:pointer;line-height:1.2}
+.layer .dl:hover{border-color:var(--accent)}
+.layer .dl:disabled{opacity:.6;cursor:progress}
+.layers .all{grid-column:1/-1;margin:4px 4px 0;font-size:12px}
+.layers .all a{color:var(--accent);font-weight:600;text-decoration:none}
+.layers .all a:hover{text-decoration:underline}
+/* Link box: shown when the page is embedded somewhere that refuses new tabs and downloads (e.g. claude.ai for visitors who are not signed in). */
+.linkbox{position:fixed;inset:0;z-index:2100;background:color-mix(in srgb,var(--bg) 72%,transparent);display:grid;place-items:center;padding:16px}
+.linkbox .card{background:var(--panel);color:var(--ink);border:1px solid var(--rule);border-radius:6px;box-shadow:0 10px 32px rgb(0 0 0 / .22);padding:16px 18px;width:min(460px,100%);display:grid;gap:10px}
+.linkbox h3{font-family:var(--display);font-size:19px;margin:0;line-height:1.15;color:var(--brand)}
+.linkbox p{margin:0;font-size:13px;line-height:1.45;color:var(--muted)}
+.linkbox .url{display:flex;gap:6px}
+.linkbox input{flex:1;min-width:0;font:inherit;font-size:13px;padding:7px 9px;border:1px solid var(--rule);border-radius:4px;background:var(--bg);color:var(--ink)}
+.linkbox .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.linkbox button,.linkbox a.btn{font:inherit;font-size:13px;font-weight:600;padding:7px 12px;border:1px solid var(--rule);border-radius:4px;background:var(--bg);color:var(--ink);cursor:pointer;text-decoration:none}
+.linkbox button.primary{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
+.linkbox .st{font-size:12px;color:var(--muted);flex:1;min-width:120px}
+.layer .n{font-family:var(--mono);font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.list{flex:1;overflow:auto;min-height:40%}
+.list h2{position:sticky;top:0;background:var(--sand);font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);font-weight:700;margin:0;padding:10px 16px 6px;border-bottom:1px solid var(--rule)}
+.item{display:grid;grid-template-columns:auto 1fr;gap:2px 10px;padding:8px 16px;border-bottom:1px solid var(--rule);cursor:pointer;background:none;border-left:0;border-right:0;border-top:0;width:100%;text-align:left;font:inherit;color:inherit}
+.item:hover,.item.on{background:var(--bg)}
+.tag{font-family:var(--mono);font-size:12px;font-weight:500;padding:1px 6px;border-radius:3px;border:1px solid currentColor;align-self:start;white-space:nowrap}
+.item .t{font-size:13px;line-height:1.3;min-width:0}
+.item .m{grid-column:2;font-size:12px;color:var(--muted)}
+.empty{padding:16px;color:var(--muted)}
+#map{height:100%;background:var(--bg)}
+.leaflet-container{background:var(--bg);font-family:var(--body)}
+.leaflet-control-zoom a,.leaflet-bar a{background:var(--panel);color:var(--ink);border-color:var(--rule)}
+.leaflet-control-scale-line{background:color-mix(in srgb,var(--panel) 85%,transparent);color:var(--ink);border-color:var(--ink)}
+.leaflet-control-attribution{background:color-mix(in srgb,var(--panel) 85%,transparent)!important;color:var(--muted)}
+.leaflet-control-attribution a{color:var(--accent)}
+.lbl{background:none;border:0;box-shadow:none;padding:0;font-family:var(--mono);font-size:11px;font-weight:500;text-shadow:0 0 3px var(--bg),0 0 3px var(--bg),0 0 2px var(--bg);white-space:nowrap}
+.lbl::before{display:none}
+.seclbl{font-family:var(--display);font-size:22px;font-weight:600;color:var(--muted);opacity:.85;text-shadow:0 0 3px var(--bg),0 0 3px var(--bg);background:none;border:0;box-shadow:none}
+.seclbl::before{display:none}
+.roadlbl{display:inline-block;transform-origin:center;font-family:var(--body);font-style:italic;font-size:12px;line-height:1;color:var(--ink);white-space:nowrap;text-shadow:0 0 3px var(--bg),0 0 3px var(--bg),0 0 2px var(--bg)}
+.apnlbl{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--ink);white-space:nowrap;text-shadow:0 0 3px var(--bg),0 0 3px var(--bg),0 0 2px var(--bg)}
+.seclbl.seclbl-sm{font-size:13px;font-weight:500;opacity:.8}
+.twplbl{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.04em;color:var(--muted);white-space:nowrap;text-shadow:0 0 3px var(--bg),0 0 3px var(--bg)}
+.info{position:absolute;right:calc(12px + env(safe-area-inset-right,0px));top:calc(12px + env(safe-area-inset-top,0px));z-index:500;width:min(340px,calc(100% - 24px));background:var(--panel);border:1px solid var(--rule);border-radius:6px;box-shadow:0 6px 24px rgb(0 0 0 / .14);padding:14px 16px;max-height:70%;overflow:auto}
+.info h3{font-family:var(--display);font-size:20px;margin:6px 0 4px;line-height:1.1;color:var(--brand)}
+.info dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin:10px 0 0;font-size:13px}
+.info dt{color:var(--muted);font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em;padding-top:2px}
+.info dd{margin:0;min-width:0;overflow-wrap:anywhere}
+.info .x{float:right;background:none;border:0;color:var(--muted);font-size:20px;cursor:pointer;line-height:1}
+.mapwrap{position:relative;min-width:0}
+#map{cursor:pointer}
+.leaflet-grab{cursor:pointer}
+.hits{margin:10px -16px 0;border-top:1px solid var(--rule)}
+.hits .item{padding-inline:16px}
+.back{display:block;background:none;border:0;padding:0 0 6px;color:var(--accent);font:inherit;font-size:13px;font-weight:600;cursor:pointer}
+.scan{margin-top:12px;display:grid;gap:8px}
+.scan .pages{display:grid;grid-template-columns:repeat(auto-fill,minmax(88px,1fr));gap:8px}
+.scan .pages button{padding:0;border:1px solid var(--rule);border-radius:3px;background:var(--bg);cursor:zoom-in;aspect-ratio:3/2;overflow:hidden}
+.scan .pages img{width:100%;height:100%;object-fit:cover;display:block}
+.scan .pg{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.scan a{color:var(--accent);font-weight:600;text-decoration:none}
+.scan a:hover{text-decoration:underline}
+.viewer{position:fixed;inset:0;z-index:2000;background:color-mix(in srgb,var(--bg) 94%,transparent);display:grid;grid-template-rows:auto 1fr;padding-top:env(safe-area-inset-top,0px)}
+.viewer .bar{display:flex;align-items:center;gap:12px;padding-block:10px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));border-bottom:1px solid var(--rule);background:var(--panel)}
+.viewer .bar b{font-family:var(--mono);font-weight:500}
+.viewer .bar .sp{flex:1}
+.viewer .bar button,.viewer .bar a{font:inherit;font-size:13px;padding:6px 10px;border:1px solid var(--rule);border-radius:4px;background:var(--bg);color:var(--ink);cursor:pointer;text-decoration:none}
+.viewer .stage{overflow:auto;padding:16px;display:grid;justify-items:center}
+.viewer img{max-width:100%;height:auto;background:#fff;box-shadow:0 4px 20px rgb(0 0 0 / .18)}
+@media (max-width:760px){
+  .app{grid-template-columns:1fr;grid-template-rows:55% 45%}
+  aside{order:2;border-right:0;border-top:1px solid var(--rule)}
+  .mapwrap{order:1}
+  .head{padding-block:12px 10px} h1{font-size:21px}
+  .info{max-height:60%}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div class="app">
+  <aside>
+    <div class="head">
+      <div class="eyebrow">Mono County, California · MDBM</div>
+      <h1>Mono County Land Records Viewer</h1>
+      <div class="sub">A catalogue of land records indexed to the land they cover.</div>
+      <form class="search" id="qform" role="search" autocomplete="off"><input id="q" type="search" placeholder="Search records: 4/62, RS 36-86, LLA 98-07, Wedertz…" aria-label="Search records" autofocus><button type="submit" id="qgo" aria-label="Search">Search</button></form>
+    </div>
+    <details class="layersbox" id="layersbox" open><summary><span>Layers</span><span class="n" id="laysum"></span></summary><div class="layers" id="layers"></div></details>
+    <div class="list" id="list"></div>
+  </aside>
+  <div class="mapwrap"><div id="map"></div><div class="loading" id="loading">Loading county records…</div><div class="info" id="info" hidden></div></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+const PAGES={}, REC={recs:{},pages:{}}; // scans now open from Google Drive
+function sheetsFor(it){
+  const p=it.p;
+  if(it.d.point){const pg=PAGES[p.CR_NUM]||[];return pg.length?[{code:p.CR_NUM,pdf:`cr/${p.CR_NUM}.pdf`,pages:pg.map(f=>`cr/${f}`)}]:[];}
+  let codes;
+  if(it.d.key==="Caltrans"){const fn=(p.DOC_LINK||"").replace(/\.pdf$/i,"").replace(/ /g,"_");codes=fn?[fn]:[];}
+  else codes=REC.recs[`${it.d.key}|${p.BOOK}|${p.PAGE}`]||[];
+  return codes.filter(c=>REC.pages[c]).map(c=>({code:c,pdf:`recs/${c}.pdf`,pages:REC.pages[c].map(f=>`recs/${f}`)}));
+}
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+let SCANS={}; fetch("data/scans.json").then(r=>r.ok?r.json():{}).then(j=>{SCANS=j||{}}).catch(()=>{});
+const DEFS=[
+ {key:"Corner Records",id:"cr",file:"cr",label:"Corner Records",tag:p=>p.CR_NUM,title:p=>p.CORNER_TYP||"",on:true,point:true},
+ {key:"USFS Corner Records",id:"fc",file:"fc",label:"USFS Corner Records",tag:p=>p.CR_NUM,title:p=>p.CORNER||"",on:true,point:true},
+ {key:"Mineral Monuments",id:"mm",file:"mm",label:"Mineral Monuments",tag:p=>(p.MM_NUM||"").split(" (")[0].replace("No. ","").slice(0,22),title:p=>`${p.COUNTY} County · ${p.TRS}${p.EST_YEAR?" · "+p.EST_YEAR:""}`,on:true,point:true},
+ {key:"Map Books",id:"mb",file:"mb",label:"Map Books",tag:p=>`MB ${p.BOOK}/${p.PAGE}`,title:p=>p.TITLE,on:true},
+ {key:"Parcel Maps",id:"pm",file:"pm",label:"Parcel Maps",tag:p=>`PMB ${p.BOOK}/${p.PAGE}`,title:p=>`${p.PM_NUM||""} · ${p.TITLE}`,on:true},
+ {key:"Records of Survey",id:"rs",file:"rs",label:"Records of Survey",tag:p=>`RSMB ${p.BOOK}/${p.PAGE}`,title:p=>`${p.RS_NUM||""} · ${p.TITLE}`,on:true},
+ {key:"Tract Maps",id:"tm",file:"tm",label:"Tract Maps",tag:p=>`TMB ${p.BOOK}/${p.PAGE}`,title:p=>`${p.TM_NUM||""} · ${p.TITLE}`,on:true},
+ {key:"Lot Line Adjustment",id:"ll",file:"ll",label:"Lot Line Adjustments",tag:p=>p.LLA_NUM||"LLA",title:p=>p.TITLE,on:true},
+ {key:"Certificates of Compliance",id:"cc",file:"cc",label:"Certificates of Compliance",tag:p=>p.CC_NUM||"CC",title:p=>p.TITLE,on:true},
+ {key:"Road Vacations",id:"rv",file:"rv",label:"Road Vacations",tag:p=>p.RES_NUM?p.RES_NUM.split(" (")[0]:"RV",title:p=>p.TITLE,on:true},
+ {key:"Soils Reports",id:"sr",file:"sr",label:"Soils Reports",tag:p=>p.MAP_REF||"Soils",title:p=>`${p.REPORT_TYP||""} · ${p.TITLE}`,on:true},
+ {key:"Official Map Book",id:"om",file:"om",label:"Official Maps",tag:p=>`OM ${p.OM_NUM||""}`,title:p=>p.TITLE,on:true},
+ {key:"Historical Assessors Parcel Maps",id:"hap",file:"hap",label:"Historical Assessor Maps",tag:p=>`Bk ${p.BOOK}-${p.PAGE}`,title:p=>`${p.TITLE} · ${p.VERSIONS} sheet${p.VERSIONS==1?"":"s"}${p.DATE_FROM?" · "+p.DATE_FROM.slice(0,4)+(p.DATE_TO&&p.DATE_TO.slice(0,4)!=p.DATE_FROM.slice(0,4)?"–"+p.DATE_TO.slice(0,4):""):""}`,on:true},
+ {key:"Mergers",id:"lm",file:"lm",label:"Lot Mergers",tag:p=>p.MERGER_NUM||"Merger",title:p=>p.TITLE,on:true},
+ {key:"Caltrans",id:"ct",file:"ct",label:"Caltrans R/W Maps",tag:p=>`${String(p.ROUTE||"").replace(/^(US|SR)\s*/,"")} PM ${p.POSTMILE||""}`,title:p=>`${p.ROUTE}, PM ${p.PM_FROM}–${p.PM_TO}`,on:true},
+ {key:"State Highway Maps",id:"sh",file:"sh",label:"State Highway Map Books",tag:p=>`SHMB ${p.BOOK}/${p.PAGE||"–"}`,title:p=>`${p.ROUTE} PM ${p.PM_FROM}–${p.PM_TO} · ${p.TITLE}`,on:true},
+ {key:"Condo Plans",id:"cp",file:"cp",label:"Condo Plans",tag:p=>p.BOOK?`CPB ${p.BOOK}/${p.PAGE}`:"CP",title:p=>p.TITLE,on:true},
+ {key:"Assessment Maps",id:"ad",file:"ad",label:"Assessment Maps",tag:p=>`AMB ${p.BOOK}/${p.PAGE}`,title:p=>p.TITLE,on:true},
+ {key:"GLO Index Cards",id:"gc",file:"gc",label:"GLO Index Cards",tag:p=>`Card ${p.TWP}`,title:p=>`${p.N_LINES} line${p.N_LINES==1?"":"s"} · ${p.YR_FIRST||"?"}–${p.YR_LAST||"?"} · ${(p.SURVEYORS||"").split(", ").slice(0,3).join(", ")}${(p.SURVEYORS||"").split(", ").length>3?"…":""}`,on:false,outline:true},
+ {key:"GLO Field Notes",id:"fn",file:"fn",label:"GLO Field Notes",tag:p=>`FN ${(p.VOLUME||"").replace(/^R\s*/,"")}-${String(p.PAGE||"").split("-")[0]}`,title:p=>`${p.TWP} · ${p.SURVEYOR||"?"} · ${p.YEAR||""}${p.SURV_TYPE?" · "+p.SURV_TYPE:""}`,on:false},
+ {key:"Misc. Maps",id:"mi",file:"mi",label:"Misc. Maps",tag:p=>p.MAP_NUM?p.MAP_NUM.replace("HPSCANNER","Scan "):(p.MAP_TYPE==="Road file"?"Road file":(p.MAP_TYPE||"Misc")),title:p=>`${p.TITLE}${p.REC_DATE?" · "+p.REC_DATE:""}`,on:false},
+ {key:"GLO Land Records",id:"gl",file:"gl",label:"GLO Plats",tag:p=>`GLO ${p.TOWNSHIP} ${p.RANGE}${p.PLAT_NO&&p.PLAT_NO!=="0501"?" #"+(+p.PLAT_NO.slice(2)):""}`,title:p=>`${p.PLAT_TYPE} · ${(p.APPROVED||p.ACCEPTED||p.SURV_DATES||"").slice(0,4)} · Secs ${p.SECTIONS}`,on:true,outline:true},
+];
+const LABELS={MAP_TYPE:"Type",BOOK:"Book",PAGE:"Page",PM_NUM:"Parcel map",RS_NUM:"Record of survey",TM_NUM:"Tract map",LLA_NUM:"LLA",CC_NUM:"Certificate",OM_NUM:"Official map",VERSIONS:"Voided sheets",DATE_FROM:"Earliest",DATE_TO:"Latest",RES_NUM:"Resolution",MAP_REF:"Map",REPORT_TYP:"Report",REP_DATE:"Report date",STREETS:"Streets",TRACT:"Tract",MERGER_NUM:"Merger",DOC_NUM:"Document",
+  ROUTE:"Route",POSTMILE:"Postmile",PM_FROM:"From PM",PM_TO:"To PM",TITLE:"Title",REC_DATE:"Recorded",SURVEYOR:"Surveyor",LIC_NUM:"License",TRS:"Location",APNS:"APNs",APN_COUNT:"Parcels",
+  TOWNSHIP:"Township",RANGE:"Range",MERIDIAN:"Meridian",PLAT_NO:"Plat no.",PLAT_TYPE:"Plat type",SURVEYS:"Surveys",SURVEYORS:"Surveyors",SURV_DATES:"Surveyed",APPROVED:"Approved",ACCEPTED:"Accepted",SECTIONS:"Sections",ACRES:"Acres",PLACEMENT:"Placed by",
+  CR_NUM:"Record no.",CORNER_TYP:"Corner",CORNER:"Corner",FOREST:"Forest",MONUMENT:"Monument",LOC_SRC:"Placed by",DOC_LINK:"Scan file",NOTES:"Notes",
+  MM_NUM:"Monument",MON_TYPE:"Type",FILE_ID:"BLM file",COUNTY:"County",EST_DATE:"Established",CONN_SURV:"In connection with",VOL_REF:"Field notes",
+  TWP:"Township",CARD_ID:"Card",N_LINES:"Survey lines",YR_FIRST:"Earliest",YR_LAST:"Latest",LINES_1:"Lines (surveyor · year · book-page)",LINES_2:"Lines (cont.)",PAGES:"Cards",
+  VOLUME:"Volume",MAP_NUM:"Scan no.",YEAR:"Surveyed",SURV_TYPE:"Survey type",LINES:"Index card ref.",ROAD:"Road",FOLDER:"Archive folder",N_FILES:"Scans",DOC_TYPES:"Document types"};
+const ORDER={cr:0,fc:0.1,mm:0.2,lm:1,ll:2,cc:2.2,rv:2.3,sr:2.4,om:2.45,hap:6.7,tm:3,pm:4,rs:5,mb:6,ct:7,sh:8,gl:10,gc:10.5,fn:10.3,mi:9,cp:2.5,ad:6.5};
+const LIST_MAX=400, LABEL_MAX=350, PARCEL_ZOOM=14, LABEL_ZOOM=15, SEC_ZOOM=12, APN_ZOOM=16;
+const getJSON=u=>fetch(u).then(r=>{if(!r.ok)throw new Error(u+" "+r.status);return r.json()});
+
+// External links and downloads. When this page is embedded in a frame that refuses new tabs and downloads (claude.ai does
+// this for visitors who are not signed in), window.open returns null — then we show the link so it can be copied instead.
+function openExternal(url,opt){
+ let w=null; try{w=window.open(url,"_blank")}catch(e){}
+ if(w){try{w.opener=null}catch(e){} return true}
+ showLinkBox(url,opt||{}); return false;
+}
+function showLinkBox(url,opt){
+ const old=document.querySelector(".linkbox"); if(old) old.remove();
+ const box=document.createElement("div"); box.className="linkbox"; box.setAttribute("role","dialog"); box.setAttribute("aria-modal","true"); box.setAttribute("aria-label",opt.title||"Open link");
+ box.innerHTML=`<div class="card"><h3></h3><p class="note"></p><p>This embedded view can't open new tabs or start downloads on its own. Copy the link and paste it into a new browser tab.</p><div class="url"><input type="text" readonly spellcheck="false" aria-label="Link"><button type="button" class="primary cp">Copy link</button></div><div class="row"><a class="btn op" data-raw="1" target="_blank" rel="noopener">Open ↗</a><span class="st" aria-live="polite"></span><button type="button" class="cl">Close</button></div></div>`;
+ box.querySelector("h3").textContent=opt.title||"Open link";
+ const note=box.querySelector(".note"); if(opt.note) note.textContent=opt.note; else note.remove();
+ const inp=box.querySelector("input"); inp.value=url; inp.addEventListener("focus",()=>inp.select());
+ const st=box.querySelector(".st");
+ const a=box.querySelector("a.op"); a.href=url;
+ a.addEventListener("click",e=>{ e.preventDefault(); let w=null; try{w=window.open(url,"_blank")}catch(x){} if(w){try{w.opener=null}catch(x){} st.textContent="Opened in a new tab."} else st.textContent="Blocked here — copy the link instead."; });
+ box.querySelector(".cp").addEventListener("click",async()=>{
+  let ok=false; try{await navigator.clipboard.writeText(url); ok=true}catch(e){}
+  if(!ok){try{inp.focus(); inp.select(); ok=document.execCommand("copy")}catch(e){}}
+  if(ok) st.textContent="Link copied — paste it into a new tab."; else {st.textContent="Couldn't copy automatically — select the link and press Ctrl+C (⌘C)."; inp.focus(); inp.select();}
+ });
+ const close=()=>{box.remove(); document.removeEventListener("keydown",esc)}; const esc=e=>{if(e.key==="Escape") close()};
+ box.querySelector(".cl").addEventListener("click",close); box.addEventListener("click",e=>{if(e.target===box) close()}); document.addEventListener("keydown",esc);
+ document.body.appendChild(box); box.querySelector(".cp").focus();
+}
+document.addEventListener("click",e=>{
+ const a=e.target.closest&&e.target.closest('a[target="_blank"]');
+ if(!a||a.dataset.raw||e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey) return;
+ e.preventDefault(); openExternal(a.href,{title:(a.textContent||"Link").replace(/\s*↗\s*$/,"").trim()});
+});
+
+const map=L.map("map",{zoomControl:true,preferCanvas:true,attributionControl:true,zoomSnap:.5});
+map.attributionControl.setPrefix(false).addAttribution("Parcels &amp; streets: Mono County GIS · PLSS: CalGEM (BLM &amp; DPR) · Postmiles: Caltrans · Imagery: USGS The National Map");
+L.control.scale({imperial:true,metric:false}).addTo(map);
+map.fitBounds([[37.46,-119.65],[38.71,-117.83]]);
+
+(async function main(){
+ const LOADING=document.getElementById("loading");
+ const QBOX=document.getElementById("q"), LIST0=document.getElementById("list");
+ const PH=QBOX.placeholder; QBOX.placeholder="Loading records…"; QBOX.setAttribute("aria-busy","true");
+ LIST0.innerHTML='<h2>Loading county records…</h2><div class="empty">The record index is downloading (about 15 MB). Search works as soon as it finishes.</div>';
+ let DATA={},county,sectionsFC,roadsFC,twFC;
+ try{
+  const [c,sec,rd,tw,...layers]=await Promise.all([getJSON("data/county.json"),getJSON("data/sections.json"),getJSON("data/roads_county.json"),getJSON("data/townships.json"),...DEFS.map(d=>getJSON(`data/${d.file}.json`))]);
+  county=c; sectionsFC=sec; roadsFC=rd; twFC=tw; DEFS.forEach((d,i)=>DATA[d.key]=layers[i]);
+ }catch(e){LOADING.textContent="Could not load the map data ("+e.message+").";QBOX.placeholder="Records failed to load";LIST0.innerHTML='<div class="empty">Could not load the record index: '+esc(e.message)+'. Reload the page to try again.</div>';return}
+ QBOX.placeholder=PH; QBOX.removeAttribute("aria-busy");
+
+ // base layers
+ const twp=L.geoJSON(county,{style:()=>({color:css("--ink"),weight:2,fill:false,dashArray:"8 5"}),interactive:false});
+ const secs=L.geoJSON(sectionsFC,{style:()=>({color:css("--grid"),weight:1,fill:false}),interactive:false}).addTo(map);
+ const twps=L.geoJSON(twFC,{style:()=>({color:css("--muted"),weight:1.8,opacity:.75,fill:false}),interactive:false}).addTo(map);
+ let plssOn=true;
+ const roadStyle=f=>/^Highway/.test(f.properties.T||"")&&!/Crossover/.test(f.properties.T)?{color:css("--ink"),weight:3,opacity:.6}:{color:css("--road"),weight:1.6,opacity:.9};
+ const roads=L.geoJSON(roadsFC,{style:roadStyle,interactive:false}).addTo(map);
+ let roadsOn=true;
+ const imagery=L.layerGroup([
+ ]).addTo(map);
+ map.createPane("imagery").style.zIndex=150;
+ let imageryOn=true; const IMG=[];
+ function syncImagery(){
+  const z=map.getZoom(), v=map.getBounds().pad(.15);
+  for(const o of IMG){ const want=imageryOn&&z>=o._z0&&z<o._z1&&v.intersects(o._b);
+   if(want&&!imagery.hasLayer(o)) imagery.addLayer(o); else if(!want&&imagery.hasLayer(o)) imagery.removeLayer(o); }
+ }
+ getJSON("data/imagery.json").then(list=>{ for(const it of list){ const o=L.imageOverlay(it.url,it.bounds,{pane:"imagery",interactive:false,zIndex:it.z??1}); o._b=L.latLngBounds(it.bounds); o._z0=it.minzoom??0; o._z1=it.maxzoom??99; IMG.push(o);} syncImagery(); }).catch(()=>{});
+ map.on("moveend zoomend",syncImagery);
+ let parcels=null, parcelsOn=true, parcelsLoading=null;
+ const parcelStyle=()=>({color:css("--parcel"),weight:.6,opacity:.7,fillOpacity:0});
+ function ensureParcels(){
+   if(parcels||parcelsLoading) return parcelsLoading;
+   parcelsLoading=getJSON("data/parcels.json").then(fc=>{parcels=L.geoJSON(fc,{style:parcelStyle,interactive:false});const n=document.getElementById("pcount");if(n)n.textContent=fc.features.length.toLocaleString();syncParcels();relabel();});
+   return parcelsLoading;
+ }
+ function syncParcels(){
+   const want=parcelsOn&&map.getZoom()>=PARCEL_ZOOM;
+   if(want&&!parcels){ensureParcels();return}
+   if(!parcels) return;
+   if(want&&!map.hasLayer(parcels)) parcels.addTo(map); else if(!want&&map.hasLayer(parcels)) map.removeLayer(parcels);
+ }
+
+ const groups={},items=[];
+ for(const d of DEFS){
+  const fc=DATA[d.key], color=()=>css("--"+d.id);
+  const g=d.point
+   ? L.geoJSON(fc,{pointToLayer:(f,ll)=>L.circleMarker(ll,{radius:4.5,color:"#fff",weight:1.2,opacity:.5625,fillColor:color(),fillOpacity:.5625,interactive:false})})
+   : L.geoJSON(fc,{style:()=>d.outline?({color:color(),weight:2,opacity:.5625,dashArray:"6 4",fill:false}):({color:color(),weight:1.4,opacity:.5625,fillColor:color(),fillOpacity:.0675}),interactive:false});
+  g.eachLayer(l=>{
+   const p=l.feature.properties,tag=d.tag(p);
+   const b=d.point?null:l.getBounds();
+   items.push({d,p,l,tag,b,title:d.title(p),text:(tag+" "+Object.values(p).join(" ")).toLowerCase()});
+  });
+  groups[d.id]=g; if(d.on) g.addTo(map);
+ }
+
+ // dynamic labels (only what's in view, zoomed in)
+ const labelLayer=L.layerGroup().addTo(map), secLabelLayer=L.layerGroup().addTo(map);
+ const lab=(ll,text,cls,color)=>L.marker(ll,{interactive:false,keyboard:false,icon:L.divIcon({className:"",html:`<span class="${cls}" style="${color?`color:${color}`:""}">${esc(text)}</span>`,iconSize:null})});
+ function relabel(){
+  labelLayer.clearLayers(); secLabelLayer.clearLayers();
+  const z=map.getZoom(), v=map.getBounds();
+  if(plssOn&&z>=9&&z<14){ twps.eachLayer(l=>{ if(v.intersects(l.getBounds())) secLabelLayer.addLayer(lab(l.getBounds().getCenter(),l.feature.properties.TR,"twplbl")); }); }
+  if(plssOn&&z>=SEC_ZOOM){ let n=0; secs.eachLayer(l=>{ if(n<300&&v.intersects(l.getBounds())){ n++; secLabelLayer.addLayer(lab(l.getBounds().getCenter(),z>=14?l.feature.properties.TRS:String(l.feature.properties.S),z>=14?"seclbl seclbl-sm":"seclbl")); } }); }
+  if(parcels&&map.hasLayer(parcels)&&z>=APN_ZOOM){ let k=0; parcels.eachLayer(l=>{ if(k>=500) return; const b=l.getBounds(); if(!v.intersects(b)) return; const pw=map.latLngToContainerPoint(b.getNorthEast()).x-map.latLngToContainerPoint(b.getSouthWest()).x; if(pw<42) return; const a=String(l.feature.properties.APN||""); if(!a) return; secLabelLayer.addLayer(lab(b.getCenter(),a.slice(0,3)+"-"+a.slice(3,6)+"-"+a.slice(6,9),"apnlbl")); k++; }); }
+  if(roadsOn&&z>=16){ // one label per street, centred on and rotated along the longest visible run of its centerline
+   const runs=new Map();
+   roads.eachLayer(l=>{ const n=l.feature.properties.N; if(!n) return; const lines=l.feature.geometry.type==="MultiLineString"?l.getLatLngs():[l.getLatLngs()];
+    for(const line of lines){ let run=[]; const flush=()=>{ if(run.length>1){ let len=0; for(let i=1;i<run.length;i++) len+=map.latLngToContainerPoint(run[i]).distanceTo(map.latLngToContainerPoint(run[i-1])); const best=runs.get(n); if(!best||len>best.len) runs.set(n,{len,run}); } run=[]; };
+     for(const p of line){ if(v.contains(p)) run.push(p); else flush(); } flush(); } });
+   let k=0;
+   for(const [n,{len,run}] of runs){ if(k>=150) break; if(len<n.length*7+16) continue; // skip streets whose visible run is shorter than the label
+    const P=run.map(p=>map.latLngToContainerPoint(p)); let half=len/2,i=1; for(;i<P.length-1&&half>P[i].distanceTo(P[i-1]);i++) half-=P[i].distanceTo(P[i-1]);
+    const a=P[i-1],b=P[i],d=a.distanceTo(b)||1,t=Math.min(1,half/d),mid=L.point(a.x+(b.x-a.x)*t,a.y+(b.y-a.y)*t); let ang=Math.atan2(b.y-a.y,b.x-a.x)*180/Math.PI; if(ang>90) ang-=180; else if(ang<-90) ang+=180;
+    secLabelLayer.addLayer(L.marker(map.containerPointToLatLng(mid),{interactive:false,keyboard:false,icon:L.divIcon({className:"",html:`<span class="roadlbl" style="transform:translate(-50%,-50%) rotate(${ang.toFixed(1)}deg)">${esc(n)}</span>`,iconSize:null})})); k++; }
+  }
+  if(z<LABEL_ZOOM) return;
+  let n=0;
+  for(const it of items){
+   if(n>=LABEL_MAX) break;
+   if(!map.hasLayer(groups[it.d.id])) continue;
+   const ll=it.d.point?it.l.getLatLng():it.b.getCenter();
+   if(!(it.d.point?v.contains(ll):v.intersects(it.b))) continue;
+   const at=it.d.point?ll:(v.contains(ll)?ll:L.latLng(Math.min(Math.max(ll.lat,v.getSouth()),v.getNorth()),Math.min(Math.max(ll.lng,v.getWest()),v.getEast())));
+   labelLayer.addLayer(lab(at,it.tag,"lbl",css("--"+it.d.id))); n++;
+  }
+ }
+ map.on("moveend zoomend",()=>{syncParcels();relabel();});
+
+ const countyBounds=twp.getBounds();
+ const homeView=()=>{map.invalidateSize();map.fitBounds(countyBounds.pad(.02));};
+ homeView(); window.addEventListener("load",homeView);
+ { let touched=false; const mc=map.getContainer(); for(const ev of ["mousedown","touchstart","wheel","keydown"]) mc.addEventListener(ev,()=>{touched=true},{passive:true,once:true}); try{ new ResizeObserver(()=>{ map.invalidateSize(); if(!touched&&mc.clientWidth>0&&mc.clientHeight>0&&!current) homeView(); }).observe(mc); }catch(e){} }
+
+ // Shapefile downloads. Signed-in claude.ai viewers get the page's "downloads" capability and a zip built here from the
+ // live data; everyone else gets the same zips from the public Google Drive "Shapefiles" folder (ids survive re-uploads).
+ const SHPDL={cr:"1VLSj_YOqPf5j1ctXyAHgZH-riUlpnALd",fc:"1XBugTV0UA-h6OjVhWU57bDUwFDD8ZrBD",mb:"1AT2e9eyO4WqQs3oajQ9y-jAW-hcJs9CU",pm:"1siOdbZhlCoeo-gDbgj8ehRLIQ2gRO0K7",rs:"1bly_2doqeJt7qidGf2q1ukoB6FemTfXT",tm:"1pofdr57wfTZVR6M4Ru8iw01859AxFk2r",ll:"1fXxgYxAIH9a0ZNI3uOrJzHZZLVnEOuur",cc:"1mgP6zzkNTaMUOfyLmSW1bISgJ9pc5sAr",rv:"1C-ZsIh3O86elTXbg6m1tF9qWbRop5vnS",sr:"1gWAbKIp5h-lnm_cyZ2RNz7X5H1oOZcGh",om:"1v-S69k5Bp8-UXl2K_QMS20l4nqh_xhg9",hap:"1ThPf5BqdJHBIz0tbZY2n4K3ZYOUpeZXF",lm:"1EAMzysn-O9XWX0Ki9nQ21RZV_heVylni",ct:"1HafY8mFqnE6kRVVvNF9SJ1G0uIJ6R0QU",sh:"1huQRTapWr1yKSnjvSxMEPmNyTbF3WGoM",cp:"1OkI2Lt310-z-_XjQelrfETA5zrzLvLgf",ad:"1B5QXckvXvH6ifkiqgpZOdF0hscQ1lgL_",gl:"1m6Q5x8JtrC6HJzZpPNfIbrXEyPqXgG16",mm:"1rg51wr4QUinsQoJ2Crzqv9SeRIKTaEs5",gc:"1hM0pW36wOCNLhe8vg4WWIuX4hDIA5qYb",fn:"1H38kMfANi9gDiq7bxxPJEzcvretmLgO8",mi:"1pDGLkrdpLk4rBQC5HD7_GmZ8XmiK5hV0"};
+ const SHP_FOLDER="https://drive.google.com/drive/folders/1VIvL-whLzKLkg46cCRZCw30_A48L7I7T";
+ const driveDL=id=>`https://drive.google.com/uc?export=download&id=${encodeURIComponent(id)}`;
+ let DL=null;
+ (async()=>{try{if(window.claude&&window.claude.use)DL=await window.claude.use("downloads")}catch(e){}})();
+ function addDL(row,name,id,getFC){
+  const b=document.createElement("button"); b.type="button"; b.className="dl"; b.textContent="SHP";
+  const label=name.replace(/_/g," ");
+  b.title=`Download ${label} as a shapefile (.zip, WGS84)`; b.setAttribute("aria-label",b.title);
+  const fallback=()=>{
+   if(!SHPDL[id]){b.textContent="!";b.title="No download available for this layer";setTimeout(()=>{b.textContent="SHP"},2500);return}
+   openExternal(driveDL(SHPDL[id]),{title:`${label} — shapefile`,note:`Zipped shapefile (.shp/.shx/.dbf/.prj, WGS84) of the ${label} layer, hosted in the viewer's public Google Drive folder.`});
+  };
+  b.addEventListener("click",async e=>{
+   e.preventDefault(); e.stopPropagation(); if(b.disabled) return;
+   if(!DL) return fallback();
+   b.disabled=true; b.textContent="…";
+   try{
+    let r=await getFC(); const layers=Array.isArray(r)?r:[{name,fc:r}];
+    const blob=SHP.build(layers);
+    await DL.save({filename:`Mono_County_${name}.zip`,data:blob});
+   }catch(err){
+    const c=err&&err.code;
+    if(c==="unavailable"||c==="not_granted"||c==="capability_disabled"||c==="capability_removed") DL=null;
+    if(c!=="declined"&&c!=="rate_limited") fallback();
+   }finally{b.disabled=false; b.textContent="SHP"}
+  });
+  row.appendChild(b);
+ }
+
+ // layer list
+ const LY=document.getElementById("layers");
+ for(const d of DEFS){
+  const n=DATA[d.key].features.length;
+  const el=document.createElement("label"); el.className="layer"; el.style.color="var(--"+d.id+")";
+  el.innerHTML=`<input type="checkbox" id="ly-${d.id}" ${d.on?"checked":""}><span class="sw ${d.point?"pt":""}"></span><span style="color:var(--ink)">${d.label}</span><span class="n">${n.toLocaleString()}</span>`;
+  el.querySelector("input").addEventListener("change",e=>{e.target.checked?groups[d.id].addTo(map):map.removeLayer(groups[d.id]);render();relabel();});
+  LY.appendChild(el);
+  addDL(el,d.label.replace(/[^A-Za-z0-9]+/g,"_"),d.id,()=>DATA[d.key]);
+ }
+ { const all=document.createElement("div"); all.className="all"; all.innerHTML=`<a href="${SHP_FOLDER}" target="_blank" rel="noopener">All layers as shapefiles (Google Drive) ↗</a>`; LY.appendChild(all); }
+ const mk=(id,label,sw,color,on,fn)=>{const el=document.createElement("label");el.className="layer";el.style.color=color;el.innerHTML=`<input type="checkbox" id="ly-${id}" ${on?"checked":""}><span class="sw ${sw}"></span><span style="color:var(--ink)">${label}</span><span class="n"></span>`;el.querySelector("input").addEventListener("change",e=>fn(e.target.checked));LY.appendChild(el);return el;};
+ mk("streets","Street Centerlines","ln","var(--road)",true,on=>{roadsOn=on;on?roads.addTo(map):map.removeLayer(roads);relabel();});
+ const pp=document.createElement("label"); pp.className="layer"; pp.style.color="var(--muted)";
+ pp.innerHTML=`<input type="checkbox" id="ly-plss" checked><span class="sw ln"></span><span style="color:var(--ink)">PLSS <span style="color:var(--muted);font-size:11px">(township · range · section)</span></span><span class="n">${twFC.features.length} twp</span>`;
+ pp.querySelector("input").addEventListener("change",e=>{plssOn=e.target.checked;for(const g of [secs,twps]) plssOn?g.addTo(map):map.removeLayer(g);relabel();});
+ LY.appendChild(pp);
+ const pl=document.createElement("label"); pl.className="layer"; pl.style.color="var(--parcel)";
+ pl.innerHTML=`<input type="checkbox" id="ly-parcels" checked><span class="sw ln"></span><span style="color:var(--ink)">Tax parcels</span><span class="n" id="pcount">27,207</span>`;
+ pl.querySelector("input").addEventListener("change",e=>{parcelsOn=e.target.checked;syncParcels();});
+ LY.appendChild(pl);
+ mk("imagery","Imagery","","var(--muted)",true,on=>{imageryOn=on;syncImagery();});
+
+ // list + search
+ const LI=document.getElementById("list"),Q=document.getElementById("q");
+ let current=null;
+ function render(){
+  const q=Q.value.trim().toLowerCase();
+  const LB=document.getElementById("layersbox"); if(LB){ if(q&&LB.open&&!LB.dataset.user){LB.dataset.prog="1";LB.dataset.auto="1";LB.open=false} else if(!q&&LB.dataset.auto&&!LB.open){LB.dataset.prog="1";delete LB.dataset.auto;LB.open=true} }
+  let vis=items.filter(it=>(q||map.hasLayer(groups[it.d.id]))&&(!q||q.split(/\s+/).every(w=>it.text.includes(w))));
+  if(!q){ const v=map.getBounds(); vis=vis.filter(it=>it.d.point?v.contains(it.l.getLatLng()):v.intersects(it.b)); }
+  LI.innerHTML="";
+  const h=document.createElement("h2"); h.textContent=q?`${vis.length.toLocaleString()} matching records`:`${vis.length.toLocaleString()} records in view`; LI.appendChild(h);
+  if(!vis.length){LI.insertAdjacentHTML("beforeend",`<div class="empty">No records ${q?"match":"in view"}. Try a book/page like 4/62, a map number like 36-86, an LLA like 98-07, or a name.</div>`);return;}
+  for(const it of vis.slice(0,LIST_MAX)){
+   const b=document.createElement("button"); b.className="item"+(it===current?" on":"");
+   b.innerHTML=`<span class="tag" style="color:var(--${it.d.id})">${esc(it.tag)}</span><span class="t">${esc(it.title)}</span><span class="m">${esc([it.p.REC_DATE,it.p.SURVEYOR].filter(Boolean).join(" · "))}</span>`;
+   b.onclick=()=>select(it,true); LI.appendChild(b);
+  }
+  if(vis.length>LIST_MAX) LI.insertAdjacentHTML("beforeend",`<div class="more">Showing the first ${LIST_MAX} — refine the search or zoom in to see the rest.</div>`);
+ }
+ let rt=null; const rerender=()=>{clearTimeout(rt);rt=setTimeout(render,120)};
+ Q.addEventListener("input",rerender);
+ { const LB=document.getElementById("layersbox"); LB.addEventListener("toggle",()=>{ if(LB.dataset.prog){delete LB.dataset.prog;return} LB.dataset.user="1"; delete LB.dataset.auto; }); const upd=()=>{const on=[...LY.querySelectorAll("input:checked")].length, all=LY.querySelectorAll("input").length; document.getElementById("laysum").textContent=`${on} of ${all} on`}; LY.addEventListener("change",upd); upd(); }
+ document.getElementById("qform").addEventListener("submit",e=>{e.preventDefault();clearTimeout(rt);render();const first=LI.querySelector(".item");if(first&&Q.value.trim()){first.focus();}});
+ map.on("moveend",()=>{if(!Q.value.trim())rerender()});
+ if(document.activeElement!==Q) try{Q.focus({preventScroll:true})}catch(e){}
+
+ const INFO=document.getElementById("info");
+ let hl=null, lastHits=null, lastParcel=null;
+ function select(it,zoom,fromList){
+  if(!map.hasLayer(groups[it.d.id])){groups[it.d.id].addTo(map);const cb=document.getElementById("ly-"+it.d.id);if(cb){cb.checked=true;cb.dispatchEvent(new Event("change",{bubbles:true}))}}
+  if(!fromList){lastHits=null;lastParcel=null}
+  current=it;
+  if(hl){map.removeLayer(hl);hl=null}
+  if(it.d.point){ hl=L.circleMarker(it.l.getLatLng(),{radius:11,color:css("--"+it.d.id),weight:3,fill:false,interactive:false}).addTo(map); if(zoom) map.setView(it.l.getLatLng(),Math.max(map.getZoom(),17)); }
+  else { hl=L.geoJSON(it.l.feature,{style:()=>({color:css("--"+it.d.id),weight:4,fillOpacity:.28,fillColor:css("--"+it.d.id)}),interactive:false}).addTo(map); if(zoom) map.fitBounds(it.b.pad(.4),{maxZoom:18}); }
+  const rows=Object.entries(it.p).filter(([k,v])=>v!==null&&v!==""&&LABELS[k]&&k!=="TITLE").map(([k,v])=>`<dt>${LABELS[k]}</dt><dd>${esc(v)}</dd>`).join("");
+  const sh=sheetsFor(it);
+  const flat=sh.flatMap(s=>s.pages.map((src,j)=>({src,label:`${s.code} · page ${j+1} of ${s.pages.length}`,pdf:s.pdf})));
+  const n=flat.length;
+  const dl=(SCANS[it.d.id]||{})[String(it.p.DOC_LINK||"").toLowerCase()]||[];
+  const drive=dl.length?`<div class="scan"><div class="pg">${dl.length>1?dl.length+" scans":"Scan"} in Google Drive</div><div${dl.length>8?' class="dlist"':""}>${dl.map(([lab,id])=>`<a href="https://drive.google.com/file/d/${encodeURIComponent(id)}/view" target="_blank" rel="noopener">${dl.length>1?esc(lab):"View scan"} ↗</a>`).join("<br>")}</div></div>`:"";
+  const scan=n?`<div class="scan"><div class="pg">${sh.length} sheet${sh.length>1?"s":""} · ${n} page${n>1?"s":""}</div><div class="pages">${flat.map((f,i)=>`<button data-i="${i}" aria-label="View ${esc(f.label)}"><img src="${f.src}" alt="${esc(f.label)}" loading="lazy"></button>`).join("")}</div><div>${sh.map(s=>`<a href="${s.pdf}" target="_blank" rel="noopener">${esc(s.code)} PDF</a>`).join(" · ")}</div></div>`:"";
+  INFO.innerHTML=`<button class="x" aria-label="Close">×</button>${fromList?backLink():""}<span class="tag" style="color:var(--${it.d.id})">${esc(it.tag)}</span><h3>${esc(it.p.TITLE||it.title)}</h3>${scan}${drive}<dl>${rows}</dl>`;
+  INFO.hidden=false; INFO.querySelector(".x").onclick=closeInfo; const bk=INFO.querySelector(".back"); if(bk) bk.onclick=()=>showHits(lastHits,lastParcel);
+  INFO.querySelectorAll(".pages button").forEach(b=>b.onclick=()=>openViewer(it.tag,flat,+b.dataset.i));
+  render();
+ }
+ function showParcel(p,fromList){
+  if(hl){map.removeLayer(hl);hl=null} current=null;
+  const a=p.APN; const apn=a?`${a.slice(0,3)}-${a.slice(3,6)}-${a.slice(6,9)}`:"";
+  const recs=items.filter(it=>(it.p.NOTES&&it.p.NOTES.includes(apn))||(it.p.APNS&&it.p.APNS.includes(apn))).map(it=>`<span class="tag" style="color:var(--${it.d.id});margin:0 4px 4px 0;display:inline-block">${esc(it.tag)}</span>`).join("");
+  INFO.innerHTML=`<button class="x" aria-label="Close">×</button>${fromList?backLink():""}<div class="eyebrow">Tax parcel</div><h3>APN ${esc(apn)}</h3><dl><dt>Address</dt><dd>${esc(p.ADDR||"Unassigned")}</dd><dt>Acres</dt><dd>${esc(p.ACRES)}</dd><dt>Legal</dt><dd>${esc(p.LEGAL)}</dd>${recs?`<dt>Records</dt><dd>${recs}</dd>`:""}</dl>`;
+  INFO.hidden=false; INFO.querySelector(".x").onclick=closeInfo; const bk=INFO.querySelector(".back"); if(bk) bk.onclick=()=>showHits(lastHits,lastParcel);
+ }
+ function openViewer(cr,pg,i){
+  let v=document.getElementById("viewer");
+  if(!v){v=document.createElement("div");v.id="viewer";v.className="viewer";v.setAttribute("role","dialog");v.setAttribute("aria-modal","true");document.body.appendChild(v);}
+  const show=()=>{const f=pg[i];v.innerHTML=`<div class="bar"><b>${esc(cr)}</b><span>${esc(f.label)}</span><span class="sp"></span>${pg.length>1?`<button id="vp" ${i?"":"disabled"}>Previous</button><button id="vn" ${i<pg.length-1?"":"disabled"}>Next</button>`:""}<a href="${f.pdf}" target="_blank" rel="noopener">PDF</a><button id="vc">Close</button></div><div class="stage"><img src="${f.src}" alt="${esc(f.label)}"></div>`;
+   v.querySelector("#vc").onclick=close; const p=v.querySelector("#vp"),n=v.querySelector("#vn");
+   if(p)p.onclick=()=>{i--;show()}; if(n)n.onclick=()=>{i++;show()}; v.querySelector("#vc").focus();};
+  const close=()=>{v.remove();document.removeEventListener("keydown",key)};
+  const key=e=>{if(e.key==="Escape")close();else if(e.key==="ArrowRight"&&i<pg.length-1){i++;show()}else if(e.key==="ArrowLeft"&&i>0){i--;show()}};
+  document.addEventListener("keydown",key); show();
+ }
+ function closeInfo(){INFO.hidden=true;current=null;if(hl){map.removeLayer(hl);hl=null}render();}
+ function ringHas(r,x,y){let c=false;for(let i=0,j=r.length-1;i<r.length;j=i++){const[xi,yi]=r[i],[xj,yj]=r[j];if((yi>y)!==(yj>y)&&x<(xj-xi)*(y-yi)/(yj-yi)+xi)c=!c}return c}
+ function polyHas(rings,x,y){return ringHas(rings[0],x,y)&&!rings.slice(1).some(h=>ringHas(h,x,y))}
+ function geomHas(g,x,y){if(!g)return false;if(g.type==="Polygon")return polyHas(g.coordinates,x,y);if(g.type==="MultiPolygon")return g.coordinates.some(p=>polyHas(p,x,y));return false}
+ const diag=b=>b.getNorthEast().distanceTo(b.getSouthWest());
+ function hitsAt(ll){
+  const pt=map.latLngToContainerPoint(ll),x=ll.lng,y=ll.lat;
+  return items.filter(it=>map.hasLayer(groups[it.d.id])&&(it.d.point?map.latLngToContainerPoint(it.l.getLatLng()).distanceTo(pt)<=9:it.b.contains(ll)&&geomHas(it.l.feature.geometry,x,y)))
+   .sort((a,b)=>ORDER[a.d.id]-ORDER[b.d.id]||(a.d.point?0:diag(a.b)-diag(b.b)));
+ }
+ function parcelAt(ll){if(!parcels||!map.hasLayer(parcels))return null;let f=null;parcels.eachLayer(l=>{if(!f&&l.getBounds().contains(ll)&&geomHas(l.feature.geometry,ll.lng,ll.lat))f=l.feature.properties});return f}
+ function showHits(hits,parcel){
+  if(hl){map.removeLayer(hl);hl=null} current=null;
+  const rows=hits.slice(0,60).map((it,i)=>`<button class="item" data-i="${i}"><span class="tag" style="color:var(--${it.d.id})">${esc(it.tag)}</span><span class="t">${esc(it.title)}</span><span class="m">${esc([it.d.label,it.p.REC_DATE].filter(Boolean).join(" · "))}</span></button>`).join("");
+  const pr=parcel?`<button class="item" data-p="1"><span class="tag" style="color:var(--parcel)">APN</span><span class="t">${esc(parcel.APN.replace(/^(\d{3})(\d{3})(\d{3}).*/,"$1-$2-$3"))}</span><span class="m">Tax parcel · ${esc(parcel.ADDR||"Unassigned")}</span></button>`:"";
+  INFO.innerHTML=`<button class="x" aria-label="Close">×</button><div class="eyebrow">This location</div><h3>${hits.length} record${hits.length===1?"":"s"} here</h3><div class="hits">${rows}${pr}</div>`;
+  INFO.hidden=false; INFO.querySelector(".x").onclick=closeInfo;
+  INFO.querySelectorAll(".hits .item").forEach(b=>b.onclick=()=>{b.dataset.p?showParcel(parcel,true):select(hits[+b.dataset.i],false,true)});
+ }
+ map.on("click",e=>{
+  const hits=hitsAt(e.latlng),parcel=parcelAt(e.latlng);
+  lastHits=hits;lastParcel=parcel;
+  if(!hits.length&&!parcel){closeInfo();return}
+  if(hits.length===1&&!parcel){select(hits[0]);return}
+  if(!hits.length){showParcel(parcel);return}
+  showHits(hits,parcel);
+ });
+ function backLink(){return lastHits&&(lastHits.length+(lastParcel?1:0))>1?`<button class="back" type="button">← All ${lastHits.length+(lastParcel?1:0)} here</button>`:""}
+
+ const restyle=()=>{twp.setStyle({color:css("--ink")});secs.setStyle({color:css("--grid")});if(parcels)parcels.setStyle({color:css("--parcel")});roads.setStyle(roadStyle);
+  for(const d of DEFS){const c=css("--"+d.id); groups[d.id].eachLayer(l=>l.setStyle(d.point?{fillColor:c}:d.outline?{color:c}:{color:c,fillColor:c}))} relabel();};
+ matchMedia("(prefers-color-scheme: dark)").addEventListener("change",restyle);
+ new MutationObserver(restyle).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
+ LOADING.remove(); render(); relabel(); syncParcels();
+})();
+const SHP=(()=>{
+ const enc=new TextEncoder();
+ const crcT=new Uint32Array(256); for(let n=0;n<256;n++){let c=n;for(let k=0;k<8;k++)c=c&1?0xEDB88320^(c>>>1):c>>>1;crcT[n]=c>>>0}
+ const crc32=b=>{let c=0xFFFFFFFF;for(let i=0;i<b.length;i++)c=crcT[(c^b[i])&255]^(c>>>8);return (c^0xFFFFFFFF)>>>0};
+ const cat=a=>{let n=0;for(const b of a)n+=b.byteLength;const u=new Uint8Array(n);let o=0;for(const b of a){u.set(b instanceof Uint8Array?b:new Uint8Array(b),o);o+=b.byteLength}return u};
+ function zip(files){
+  const parts=[],cen=[];let off=0;
+  for(const f of files){const n=enc.encode(f.name),c=crc32(f.data),sz=f.data.length;
+   const h=new DataView(new ArrayBuffer(30));h.setUint32(0,0x04034b50,true);h.setUint16(4,20,true);h.setUint16(6,0x0800,true);h.setUint16(12,0x21,true);h.setUint32(14,c,true);h.setUint32(18,sz,true);h.setUint32(22,sz,true);h.setUint16(26,n.length,true);
+   parts.push(new Uint8Array(h.buffer),n,f.data);
+   const C=new DataView(new ArrayBuffer(46));C.setUint32(0,0x02014b50,true);C.setUint16(4,20,true);C.setUint16(6,20,true);C.setUint16(8,0x0800,true);C.setUint16(14,0x21,true);C.setUint32(16,c,true);C.setUint32(20,sz,true);C.setUint32(24,sz,true);C.setUint16(28,n.length,true);C.setUint32(42,off,true);
+   cen.push(new Uint8Array(C.buffer),n);off+=30+n.length+sz;}
+  let cs=0;for(const b of cen)cs+=b.length;
+  const E=new DataView(new ArrayBuffer(22));E.setUint32(0,0x06054b50,true);E.setUint16(8,files.length,true);E.setUint16(10,files.length,true);E.setUint32(12,cs,true);E.setUint32(16,off,true);
+  return [...parts,...cen,new Uint8Array(E.buffer)];
+ }
+ const isCW=r=>{let s=0;for(let k=0;k<r.length-1;k++)s+=(r[k+1][0]-r[k][0])*(r[k+1][1]+r[k][1]);return s>0};
+ const dedup=r=>r.filter((p,i)=>i===0||p[0]!==r[i-1][0]||p[1]!==r[i-1][1]);
+ const close=r=>r.length&&(r[0][0]!==r[r.length-1][0]||r[0][1]!==r[r.length-1][1])?[...r,r[0]]:r;
+ function shape(g){
+  if(!g)return null;const t=g.type,c=g.coordinates;
+  if(t==="Point")return{type:1,pt:c};
+  const polys=t==="Polygon"?[c]:t==="MultiPolygon"?c:null;
+  if(polys)return{type:5,parts:polys.flatMap(p=>p.map((r,i)=>{r=close(dedup(r));return isCW(r)===(i===0)?r:r.slice().reverse()})).filter(r=>r.length>=4)};
+  if(t==="LineString")return{type:3,parts:[dedup(c)].filter(p=>p.length>=2)};
+  if(t==="MultiLineString")return{type:3,parts:c.map(dedup).filter(p=>p.length>=2)};
+  return null;
+ }
+ function shpx(fc){
+  const recs=fc.features.map(f=>shape(f.geometry));
+  const st=(recs.find(r=>r)||{type:5}).type;
+  let X0=Infinity,Y0=Infinity,X1=-Infinity,Y1=-Infinity;
+  const bodies=recs.map(r=>{
+   if(!r||r.type!==st||(st!==1&&!r.parts.length)){const b=new DataView(new ArrayBuffer(4));return b.buffer}
+   if(st===1){const[x,y]=r.pt,b=new DataView(new ArrayBuffer(20));b.setInt32(0,1,true);b.setFloat64(4,x,true);b.setFloat64(12,y,true);
+    X0=Math.min(X0,x);Y0=Math.min(Y0,y);X1=Math.max(X1,x);Y1=Math.max(Y1,y);return b.buffer}
+   const P=r.parts;let np=0;for(const p of P)np+=p.length;
+   const b=new DataView(new ArrayBuffer(44+4*P.length+16*np));
+   let x0=Infinity,y0=Infinity,x1=-Infinity,y1=-Infinity;
+   for(const p of P)for(const[x,y]of p){if(x<x0)x0=x;if(x>x1)x1=x;if(y<y0)y0=y;if(y>y1)y1=y}
+   X0=Math.min(X0,x0);Y0=Math.min(Y0,y0);X1=Math.max(X1,x1);Y1=Math.max(Y1,y1);
+   b.setInt32(0,st,true);[x0,y0,x1,y1].forEach((v,i)=>b.setFloat64(4+8*i,v,true));b.setInt32(36,P.length,true);b.setInt32(40,np,true);
+   let o=44,k=0;for(const p of P){b.setInt32(o,k,true);o+=4;k+=p.length}
+   for(const p of P)for(const[x,y]of p){b.setFloat64(o,x,true);b.setFloat64(o+8,y,true);o+=16}
+   return b.buffer});
+  if(!isFinite(X0))X0=Y0=X1=Y1=0;
+  const hdr=len=>{const h=new DataView(new ArrayBuffer(100));h.setInt32(0,9994);h.setInt32(24,len/2);h.setInt32(28,1000,true);h.setInt32(32,st,true);[X0,Y0,X1,Y1].forEach((v,i)=>h.setFloat64(36+8*i,v,true));return h.buffer};
+  let len=100;for(const b of bodies)len+=8+b.byteLength;
+  const sp=[hdr(len)],xp=[hdr(100+8*bodies.length)];let off=100;
+  bodies.forEach((b,i)=>{const rh=new DataView(new ArrayBuffer(8));rh.setInt32(0,i+1);rh.setInt32(4,b.byteLength/2);sp.push(rh.buffer,b);
+   const x=new DataView(new ArrayBuffer(8));x.setInt32(0,off/2);x.setInt32(4,b.byteLength/2);xp.push(x.buffer);off+=8+b.byteLength});
+  return{shp:cat(sp),shx:cat(xp)};
+ }
+ const str=v=>typeof v==="object"?JSON.stringify(v):String(v);
+ const empty=v=>v===null||v===undefined||v==="";
+ function fit(s,w){let b=enc.encode(s);if(b.length<=w)return b;s=s.slice(0,w);b=enc.encode(s);while(b.length>w){s=s.slice(0,-1);b=enc.encode(s)}return b}
+ function dbf(fc){
+  const F=fc.features,keys=[];
+  for(const f of F)for(const k of Object.keys(f.properties||{}))if(!keys.includes(k))keys.push(k);
+  const used=new Set();
+  let flds=keys.map(k=>{
+   let n=(k.replace(/[^A-Za-z0-9_]/g,"_").slice(0,10))||"FIELD",base=n,i=1;
+   while(used.has(n.toUpperCase())){const s=String(i++);n=base.slice(0,10-s.length)+s}used.add(n.toUpperCase());
+   let num=true,any=false,dec=0,w=1;
+   for(const f of F){const v=f.properties?.[k];if(empty(v))continue;any=true;if(typeof v!=="number"||!isFinite(v)){num=false;break}const s=String(v);dec=Math.max(dec,s.includes("e")?8:(s.split(".")[1]||"").length)}
+   if(any&&num){dec=Math.min(dec,8);for(const f of F){const v=f.properties?.[k];if(!empty(v))w=Math.max(w,v.toFixed(dec).length)}return{k,n,t:"N",w:Math.min(w,19),dec}}
+   for(const f of F){const v=f.properties?.[k];if(!empty(v))w=Math.max(w,enc.encode(str(v)).length)}
+   return{k,n,t:"C",w:Math.min(w,254),dec:0}});
+  if(!flds.length)flds=[{k:"__id",n:"ID",t:"N",w:9,dec:0}];
+  const recLen=1+flds.reduce((a,f)=>a+f.w,0),hl=32+32*flds.length+1,n=F.length;
+  const u=new Uint8Array(hl+recLen*n+1),dv=new DataView(u.buffer),d=new Date();
+  u[0]=3;u[1]=d.getFullYear()-1900;u[2]=d.getMonth()+1;u[3]=d.getDate();dv.setUint32(4,n,true);dv.setUint16(8,hl,true);dv.setUint16(10,recLen,true);
+  flds.forEach((f,i)=>{const o=32+32*i;for(let j=0;j<f.n.length;j++)u[o+j]=f.n.charCodeAt(j);u[o+11]=f.t.charCodeAt(0);u[o+16]=f.w;u[o+17]=f.dec});
+  u[hl-1]=0x0D;u.fill(0x20,hl,hl+recLen*n);
+  let o=hl;
+  F.forEach((ft,idx)=>{o++;
+   for(const f of flds){const v=f.k==="__id"?idx+1:ft.properties?.[f.k];
+    if(!empty(v)){if(f.t==="N"){const b=enc.encode(Number(v).toFixed(f.dec)).subarray(0,f.w);u.set(b,o+f.w-b.length)}else u.set(fit(str(v),f.w),o)}
+    o+=f.w}});
+  u[u.length-1]=0x1A;
+  return u;
+ }
+ const PRJ='GEOGCS["GCS_WGS_1984",DATUM["D_WGS_1984",SPHEROID["WGS_1984",6378137.0,298.257223563]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]]';
+ function build(layers){
+  const files=[];
+  for(const{name,fc}of layers){const{shp,shx}=shpx(fc);
+   files.push({name:name+".shp",data:shp},{name:name+".shx",data:shx},{name:name+".dbf",data:dbf(fc)},{name:name+".prj",data:enc.encode(PRJ)},{name:name+".cpg",data:enc.encode("UTF-8")})}
+  return new Blob(zip(files),{type:"application/zip"});
+ }
+ return{build,zipBlob:files=>new Blob(zip(files),{type:"application/zip"})};
+})();
+
+function esc(s){return String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+</script>
+
+
+</body></html>
