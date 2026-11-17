@@ -243,17 +243,13 @@ map.fitBounds([[37.46,-119.65],[38.71,-117.83]]);
  const roadStyle=f=>/^Highway/.test(f.properties.T||"")&&!/Crossover/.test(f.properties.T)?{color:css("--ink"),weight:3,opacity:.6}:{color:css("--road"),weight:1.6,opacity:.9};
  const roads=L.geoJSON(roadsFC,{style:roadStyle,interactive:false}).addTo(map);
  let roadsOn=true;
- const imagery=L.layerGroup([
- ]).addTo(map);
  map.createPane("imagery").style.zIndex=150;
- let imageryOn=true; const IMG=[];
+ // Live USGS National Map orthoimagery tiles (public domain, no key required)
+ const imagery=L.tileLayer("https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryOnly/MapServer/tile/{z}/{y}/{x}",{pane:"imagery",maxNativeZoom:16,maxZoom:20,interactive:false}).addTo(map);
+ let imageryOn=true;
  function syncImagery(){
-  const z=map.getZoom(), v=map.getBounds().pad(.15);
-  for(const o of IMG){ const want=imageryOn&&z>=o._z0&&z<o._z1&&v.intersects(o._b);
-   if(want&&!imagery.hasLayer(o)) imagery.addLayer(o); else if(!want&&imagery.hasLayer(o)) imagery.removeLayer(o); }
+  if(imageryOn&&!map.hasLayer(imagery)) imagery.addTo(map); else if(!imageryOn&&map.hasLayer(imagery)) map.removeLayer(imagery);
  }
- getJSON("data/imagery.json").then(list=>{ for(const it of list){ const o=L.imageOverlay(it.url,it.bounds,{pane:"imagery",interactive:false,zIndex:it.z??1}); o._b=L.latLngBounds(it.bounds); o._z0=it.minzoom??0; o._z1=it.maxzoom??99; IMG.push(o);} syncImagery(); }).catch(()=>{});
- map.on("moveend zoomend",syncImagery);
  let parcels=null, parcelsOn=true, parcelsLoading=null;
  const parcelStyle=()=>({color:css("--parcel"),weight:.6,opacity:.7,fillOpacity:0});
  function ensureParcels(){
