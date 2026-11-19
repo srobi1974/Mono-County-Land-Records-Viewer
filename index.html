@@ -72,6 +72,11 @@ h1{font-family:var(--display);font-weight:700;font-size:26px;line-height:1.05;ma
 .linkbox button,.linkbox a.btn{font:inherit;font-size:13px;font-weight:600;padding:7px 12px;border:1px solid var(--rule);border-radius:4px;background:var(--bg);color:var(--ink);cursor:pointer;text-decoration:none}
 .linkbox button.primary{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
 .linkbox .st{font-size:12px;color:var(--muted);flex:1;min-width:120px}
+.linkbox ul.fl{list-style:none;margin:0;padding:0;display:grid;gap:6px;max-height:50vh;overflow:auto}
+.linkbox ul.fl li{display:flex;gap:10px;align-items:center;justify-content:space-between;border:1px solid var(--rule);border-radius:4px;padding:7px 9px}
+.linkbox ul.fl .nm{font-size:13px;color:var(--ink);min-width:0;overflow-wrap:anywhere}
+.linkbox ul.fl .nm small{display:block;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.linkbox ul.fl a.btn{white-space:nowrap}
 .layer .n{font-family:var(--mono);font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
 .list{flex:1;overflow:auto;min-height:40%}
 .list h2{position:sticky;top:0;background:var(--sand);font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);font-weight:700;margin:0;padding:10px 16px 6px;border-bottom:1px solid var(--rule)}
@@ -357,6 +362,37 @@ map.fitBounds([[37.46,-119.65],[38.71,-117.83]]);
   row.appendChild(b);
  }
 
+ // Scan downloads: every scan lives in the public Google Drive folder(s) listed here (layer id -> [folderId, name, scans, MB]).
+ // Browsers can't zip Drive files from this page, so the button opens the folder(s); Drive's own Download zips them.
+ const SCANDL={"mb":[["14Tuu7luZ0NkXmaP0KDYFSXR5arHmVKkR","Map Books - Mono County",684,177],["11p1NoA1OJPRM3zXm07KMK59Rybz1FXed","Map Books - T5N R25E",65,7]],"pm":[["1HLllEJofEAsHL-uAx65YWOZD0D_FB7Zy","Parcel Maps - Mono County",458,145],["1ZgjmZ4N2NaN1qngYzeD9JpKUXvf0JtYf","Parcel Maps - T5N R25E",23,5]],"rs":[["1jbuL-tHmZTxOeib4kvStHpV6fKBFITWe","Records of Survey - Mono County",541,185],["1R2wzYE5LHzU-rdj_tzVohOM5GXW6LFFW","Records of Survey - T5N R25E",36,9]],"tm":[["1Yr_vEyIEowYewwgxEFEr8lp0O9ntj2wN","Tract Maps - Mono County",201,124],["1_GtFJlKkdhy9olB1OlpHyf03_TCquiiT","Tract Maps - T5N R25E",2,1]],"ct":[["1pDT3t1jl9l-lmkhrQDsj7s075FzNtFG9","Caltrans - Mono County",487,824],["18hsXocaCq64p9MMspi6ZwpJxrjHYkglO","Caltrans - T5N R25E",16,9]],"cr":[["1gWbIV40ZF_gig5VVGsrd5994JmMJlGl8","Corner Records - Mono County",1432,465],["17tnwsZ9XaoOw_rK-N6bGWoy5-QHAAn_r","Corner Records - 5 North",35,31]],"sh":[["18s9YMNfRNq0K8te967M_QqcCqnCWK3i3","State Highway Maps - Mono County",463,513]],"ll":[["15bFRiAc9Et3qnRwWRGbeLGZOQ645zMFQ","Lot Line Adjustment Archive",184,218]],"lm":[["14SPouFgVMAiv4q7QZrsW-BPuFUJDVfIz","Mergers",28,6]],"am":[["1cj2IUqpXH31rvc0aYTmP5axgX0AkmNty","BK027",20,3]],"gl":[["1jHdktunhiHMqS9HQ_J5LubAbzkeyGHqP","GLO",303,1209]],"cp":[["1PAuS-CcTgKa5JJMmH-G1ocZkdFUliVOr","Condo Plans - Mono County",141,131]],"ad":[["1mjmWboskM254YbIy2cURJ_c3GVcMjPYX","Assessment Maps - Mono County",47,20]],"cc":[["1xAyMcs2juT_8-aGG4WOIKgZFpoRJCcgj","Certificates of Compliance - Mono County",13,17]],"rv":[["13xsyHtt_VZPjV3NjPJSlyyAYCubgZiOQ","Road Vacations - Mono County",52,19]],"sr":[["1qGsjpwPVPJsrC9MgYRImghldl8FagT2n","Soils Reports - Mono County",51,50]],"om":[["19yqhFtadfFepR8pfEWDAqJwMTgDG9FWL","Official Map Book - Mono County",1,0]],"hap":[["1vZiLeq587NnmcapwGhgWuBFUULnozzny","Historical Assessors Parcel Maps - Mono County",8299,1758]],"fc":[["1lGtrQmL08g3duucEbBoLDMf8HAXrh6r8","USFS Corner Records - Mono County",388,112]],"mm":[["15zVRslUCNzck9kusKaKAj8FptkCelFPe","Mineral Monuments",5,1]],"gc":[["1BUqaH6atEH9nRB6pfNG9nERsiTM2oQ6B","GLO Index Cards",124,31]],"fn":[["1cF9aWL_EVCA50s3KBC90jlEF4OjCRzN_","GLO Field Notes",305,1475]],"mi":[["1vsso7OQuifmQDcbozDu4mBM95HO_dfqK","Road Files",1750,2466],["1hEQwDElXKd_5nLTDZftA9uo_z0mGb7so","Misc. Maps",302,3638]],"es":[["1ySMm5dEtlrOhqOTalyyoDkPM2JsSrZpV","Easements",2666,316]]};
+ const fmtMB=mb=>mb>=1000?(mb/1000).toFixed(1)+" GB":Math.max(1,mb)+" MB";
+ function addScanDL(row,id,label){
+  const fs=SCANDL[id]; if(!fs) return;
+  const b=document.createElement("button"); b.type="button"; b.className="dl"; b.textContent="SCANS";
+  const n=fs.reduce((a,f)=>a+f[2],0), mb=fs.reduce((a,f)=>a+f[3],0);
+  b.title=`Download all ${n.toLocaleString()} ${label} scans (Google Drive, about ${fmtMB(mb)})`; b.setAttribute("aria-label",b.title);
+  b.addEventListener("click",e=>{
+   e.preventDefault(); e.stopPropagation();
+   const old=document.querySelector(".linkbox"); if(old) old.remove();
+   const box=document.createElement("div"); box.className="linkbox"; box.setAttribute("role","dialog"); box.setAttribute("aria-modal","true"); box.setAttribute("aria-label",label+" scans");
+   box.innerHTML=`<div class="card"><h3></h3><p class="sum"></p><ul class="fl"></ul><p>Open the folder, then click the folder name at the top and choose <b>Download</b> (or select all files and download). Google Drive zips the files for you; very large folders arrive as several zip files.</p><div class="row"><span class="st"></span><button type="button" class="cl">Close</button></div></div>`;
+   box.querySelector("h3").textContent=label+" — all scans";
+   box.querySelector(".sum").textContent=`${n.toLocaleString()} scans, about ${fmtMB(mb)}, in ${fs.length===1?"one Google Drive folder":fs.length+" Google Drive folders"}.`;
+   const ul=box.querySelector("ul");
+   for(const [fid,name,cnt,size] of fs){
+    const li=document.createElement("li");
+    li.innerHTML=`<span class="nm"></span><a class="btn" target="_blank" rel="noopener">Open folder ↗</a>`;
+    li.querySelector(".nm").textContent=name; const sm=document.createElement("small"); sm.textContent=`${cnt.toLocaleString()} scans · ${fmtMB(size)}`; li.querySelector(".nm").appendChild(sm);
+    li.querySelector("a").href="https://drive.google.com/drive/folders/"+encodeURIComponent(fid);
+    ul.appendChild(li);
+   }
+   const close=()=>{box.remove(); document.removeEventListener("keydown",esc)}; const esc=ev=>{if(ev.key==="Escape") close()};
+   box.querySelector(".cl").addEventListener("click",close); box.addEventListener("click",ev=>{if(ev.target===box) close()}); document.addEventListener("keydown",esc);
+   document.body.appendChild(box); box.querySelector("a.btn").focus();
+  });
+  row.appendChild(b);
+ }
+
  // layer list
  const LY=document.getElementById("layers");
  for(const d of DEFS){
@@ -366,6 +402,7 @@ map.fitBounds([[37.46,-119.65],[38.71,-117.83]]);
   el.querySelector("input").addEventListener("change",e=>{e.target.checked?groups[d.id].addTo(map):map.removeLayer(groups[d.id]);render();relabel();});
   LY.appendChild(el);
   addDL(el,d.label.replace(/[^A-Za-z0-9]+/g,"_"),d.id,()=>DATA[d.key]);
+  addScanDL(el,d.id,d.label);
  }
  { const all=document.createElement("div"); all.className="all"; all.innerHTML=`<a href="${SHP_FOLDER}" target="_blank" rel="noopener">All layers as shapefiles (Google Drive) ↗</a>`; LY.appendChild(all); }
  const mk=(id,label,sw,color,on,fn)=>{const el=document.createElement("label");el.className="layer";el.style.color=color;el.innerHTML=`<input type="checkbox" id="ly-${id}" ${on?"checked":""}><span class="sw ${sw}"></span><span style="color:var(--ink)">${label}</span><span class="n"></span>`;el.querySelector("input").addEventListener("change",e=>fn(e.target.checked));LY.appendChild(el);return el;};
