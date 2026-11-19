@@ -368,7 +368,7 @@ map.fitBounds([[37.46,-119.65],[38.71,-117.83]]);
  const fmtMB=mb=>mb>=1000?(mb/1000).toFixed(1)+" GB":Math.max(1,mb)+" MB";
  function addScanDL(row,id,label){
   const fs=SCANDL[id]; if(!fs) return;
-  const b=document.createElement("button"); b.type="button"; b.className="dl"; b.textContent="SCANS";
+  const b=document.createElement("button"); b.type="button"; b.className="dl"; b.textContent="DOWNLOAD";
   const n=fs.reduce((a,f)=>a+f[2],0), mb=fs.reduce((a,f)=>a+f[3],0);
   b.title=`Download all ${n.toLocaleString()} ${label} scans (Google Drive, about ${fmtMB(mb)})`; b.setAttribute("aria-label",b.title);
   b.addEventListener("click",e=>{
