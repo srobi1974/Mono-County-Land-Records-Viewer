@@ -157,7 +157,7 @@ function sheetsFor(it){
   return codes.filter(c=>REC.pages[c]).map(c=>({code:c,pdf:`recs/${c}.pdf`,pages:REC.pages[c].map(f=>`recs/${f}`)}));
 }
 const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
-let SCANS={}; fetch("data/scans.json").then(r=>r.ok?r.json():{}).then(j=>{SCANS=j||{}}).catch(()=>{});
+let SCANS={}; fetch("data/scans.json",{cache:"no-cache"}).then(r=>r.ok?r.json():{}).then(j=>{SCANS=j||{}}).catch(()=>{});
 const DEFS=[
  {key:"Corner Records",id:"cr",file:"cr",label:"Corner Records",tag:p=>p.CR_NUM,title:p=>p.CORNER_TYP||"",on:true,point:true},
  {key:"USFS Corner Records",id:"fc",file:"fc",label:"USFS Corner Records",tag:p=>p.CR_NUM,title:p=>p.CORNER||"",on:true,point:true},
@@ -192,7 +192,7 @@ const LABELS={DOC_NUM:"Document",VOL:"Volume",PURPOSE:"Purpose",GRANTEE:"Grantee
   VOLUME:"Volume",MAP_NUM:"Scan no.",YEAR:"Surveyed",SURV_TYPE:"Survey type",LINES:"Index card ref.",ROAD:"Road",FOLDER:"Archive folder",N_FILES:"Scans",DOC_TYPES:"Document types"};
 const ORDER={cr:0,fc:0.1,mm:0.2,lm:1,ll:2,cc:2.2,rv:2.3,sr:2.4,om:2.45,hap:6.7,tm:3,pm:4,rs:5,mb:6,ct:7,sh:8,gl:10,gc:10.5,fn:10.3,mi:9,es:9.2,cp:2.5,ad:6.5};
 const LIST_MAX=400, LABEL_MAX=350, PARCEL_ZOOM=14, LABEL_ZOOM=15, SEC_ZOOM=12, APN_ZOOM=16;
-const getJSON=u=>fetch(u).then(r=>{if(!r.ok)throw new Error(u+" "+r.status);return r.json()});
+const getJSON=u=>fetch(u,{cache:"no-cache"}).then(r=>{if(!r.ok)throw new Error(u+" "+r.status);return r.json()});
 
 // External links and downloads. When this page is embedded in a frame that refuses new tabs and downloads (claude.ai does
 // this for visitors who are not signed in), window.open returns null — then we show the link so it can be copied instead.
