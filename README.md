@@ -16,6 +16,6 @@ Then open http://localhost:8000. It also works as a GitHub Pages site (Settings 
 
 ## Migration notes
 
-The page and data match the Claude artifact as of 2026-11-20 08:55 (artifact Version 150), including the Easements layer. `data/parcels.json` holds 27,207 tax parcels with only APN, address, acres and legal description; owner and mailing fields are deliberately left out.
+The page and data match the Claude artifact as of 2026-11-20 09:00 (artifact Version 151), including the Easements layer. `data/parcels.json` holds 27,207 tax parcels with only APN, address, acres and legal description; owner and mailing fields are deliberately left out.
 
 Imagery comes live from the USGS National Map orthoimagery tile service (`USGSImageryOnly`), so no image files are stored in this repo. The pre-cut aerial pictures used in the original artifact (`img/`, `data/imagery.json`) were dropped in favor of the tile layer.
